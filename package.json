@@ -7,9 +7,17 @@
     "dev": "node esbuild.config.mjs",
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
     "version": "node version-bump.mjs && npm run build",
-    "reset": "node esbuild.config.mjs production && shx cp main.js main.js.br && shx cp main.js.map main.js.map.br"
+    "reset": "node esbuild.config.mjs production && shx cp main.js main.js.br && shx cp main.js.map main.js.map.br",
+    "lint": "echo 'Error: no lint specified' && exit 1",
+    "test": "echo 'Error: no test specified' && exit 1"
   },
-  "keywords": ["obsidian", "ai", "rag", "memory-graph", "chat"],
+  "keywords": [
+    "obsidian",
+    "ai",
+    "rag",
+    "memory-graph",
+    "chat"
+  ],
   "author": "AI MCP Team",
   "license": "MIT",
   "devDependencies": {
