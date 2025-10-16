@@ -1,0 +1,33 @@
+{
+  "name": "obsidian-ai-mcp-plugin",
+  "version": "0.4.0",
+  "description": "AI MCP Plugin with Memory Graph, RAG (Mistral), Qdrant, Role+Planning, Chat Interface.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && npm run build",
+    "reset": "node esbuild.config.mjs production && shx cp main.js main.js.br && shx cp main.js.map main.js.map.br"
+  },
+  "keywords": ["obsidian", "ai", "rag", "memory-graph", "chat"],
+  "author": "AI MCP Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "builtin-modules": "3.3.0",
+    "esbuild": "0.20.2",
+    "obsidian": "latest",
+    "tslib": "2.6.2",
+    "typescript": "5.3.3",
+    "zod": "^3.23.8"
+  },
+  "dependencies": {
+    "@langchain/mistralai": "^0.0.26",
+    "@qdrant/js-client-rest": "^1.10.1",
+    "ai": "^3.3.0",
+    "marked": "^9.1.0",
+    "chart.js": "^4.4.0",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  }
+}

@@ -1,0 +1,387 @@
+/* AI MCP Plugin Styles */
+
+.ai-mcp-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+
+.ai-mcp-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.ai-mcp-mode-select {
+  flex: 1;
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.role-manage-btn {
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.role-manage-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+.ai-mcp-context-toggle {
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.ai-mcp-context-panel {
+  padding: 10px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.ai-mcp-context-panel.mobile-hidden {
+  display: none;
+}
+
+.ai-mcp-context-panel h4 {
+  margin: 0 0 8px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.context-content {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-normal);
+}
+
+.ai-mcp-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: var(--background-primary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.message.user {
+  align-self: flex-end;
+}
+
+.message.bot {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 8px 12px;
+  border-radius: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message.user .message-content {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.message.bot .message-content {
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.message-content.loading {
+  opacity: 0.7;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.message-content.error {
+  background: var(--background-modifier-error) !important;
+  color: var(--text-error) !important;
+}
+
+.message-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  align-self: flex-end;
+}
+
+.message.bot .message-time {
+  align-self: flex-start;
+}
+
+.ai-mcp-input-area {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.ai-mcp-input {
+  flex: 1;
+  min-height: 40px;
+  max-height: 120px;
+  padding: 8px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 20px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  resize: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ai-mcp-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+
+.ai-mcp-send {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.ai-mcp-send:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.ai-mcp-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ai-mcp-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.suggestion-item {
+  padding: 6px 12px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.suggestion-item:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+  transform: translateY(-1px);
+}
+
+.ai-mcp-export-controls {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.export-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.export-btn:hover {
+  background: var(--background-modifier-hover);
+  transform: translateY(-1px);
+}
+
+.export-btn.mod-cta {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.export-btn.mod-cta:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* Role Management Modal */
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.role-item {
+  padding: 12px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.role-item h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-normal);
+  font-size: 16px;
+}
+
+.prompt-preview {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.role-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.role-actions button {
+  padding: 4px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.role-actions button:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ai-mcp-chat-container {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .ai-mcp-header {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .ai-mcp-suggestions {
+    justify-content: center;
+  }
+  
+  .ai-mcp-export-controls {
+    flex-wrap: wrap;
+  }
+  
+  .export-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Dark mode adjustments */
+.theme-dark .ai-mcp-input {
+  background: var(--background-primary-alt);
+}
+
+.theme-dark .message.bot .message-content {
+  background: var(--background-primary-alt);
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .ai-mcp-header,
+  .ai-mcp-context-panel,
+  .ai-mcp-messages,
+  .ai-mcp-export-controls {
+    border-width: 2px;
+  }
+  
+  .message-content {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .message,
+  .suggestion-item,
+  .export-btn {
+    animation: none;
+    transition: none;
+  }
+  
+  .suggestion-item:hover,
+  .export-btn:hover {
+    transform: none;
+  }
+}

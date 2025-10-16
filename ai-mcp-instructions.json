@@ -1,0 +1,102 @@
+{
+  "project_name": "Obsidian AI MCP Plugin",
+  "description": "Enhanced with Mistral RAG, Qdrant hybrid, Role+Planning, Chat Interface, Graph View integration.",
+  "version": "0.3.0",
+  "ai_behavior": {
+    "default_provider": "mistral",
+    "preferred_models": {
+      "mistral": ["mistral-embed"]
+    },
+    "tone": "professional",
+    "language": "th, en",
+    "max_response_length": 2000,
+    "context_sources": ["memory_graph", "rag_vault", "planning_tasks"],
+    "fallback_providers": ["local"],
+    "roles": {
+      "assistant": "You are a helpful AI assistant that can recall context from the user's vault using a knowledge graph. Provide clear, concise, and contextually relevant responses based on the user's notes and documents.",
+      "planner": "You are a task planning assistant that uses temporal edges in the memory graph to create structured plans. Break down complex goals into actionable steps and suggest optimal sequences based on dependencies and priorities.",
+      "researcher": "You are a research assistant that searches for meanings and similarities using Qdrant vectors. Find relevant information, identify patterns, and provide comprehensive insights based on semantic similarity and contextual relationships."
+    }
+  },
+  "mcp_config": {
+    "memory_graph": {
+      "storage": "json",
+      "file_path": "memory-graph.json",
+      "schema_version": "1.0.0",
+      "max_nodes": 10000,
+      "max_edges": 50000,
+      "prune_threshold": 0.5,
+      "embedding_dim": 1024,
+      "vault_integration": {
+        "enabled": true,
+        "scan_interval": 600000,
+        "file_types": [".md"],
+        "max_file_size": 1048576,
+        "store_in_properties": true
+      }
+    },
+    "encrypted_graph_sync": {
+      "enabled": true,
+      "encryption_key": "vault-derived",
+      "sync_protocol": "ws-encrypted",
+      "max_sync_batch": 100,
+      "conflict_resolution": "last-modified"
+    },
+    "planning_agent": {
+      "task_format": "craft_clickup",
+      "max_tasks": 500,
+      "use_graph_for_planning": true
+    }
+  },
+  "rag_config": {
+    "vector_store": "qdrant",
+    "embedding_model": "mistral-embed",
+    "chunk_size": 500,
+    "top_k": 5,
+    "qdrant_config": {
+      "local_enabled": true,
+      "host": "localhost:6333",
+      "collection_name": "obsidian_rag",
+      "max_vectors": 100000,
+      "search_types": ["similarity", "meaning", "timestamp_filter"]
+    },
+    "cloudflare_config": {
+      "enabled": true,
+      "account_id": "",
+      "api_token": "",
+      "index_name": "obsidian-vectors",
+      "sync_interval": 600000,
+      "sync_only": true
+    },
+    "change_detection": true
+  },
+  "sync_config": {
+    "server_port": 8080,
+    "sync_interval": 300000,
+    "data_types": ["vectors", "memory", "tasks"]
+  },
+  "ui_config": {
+    "chat_interface": {
+      "enabled": true,
+      "mobile_optimized": true,
+      "suggestion_prompts": [
+        "What's my next task?",
+        "Summarize this note",
+        "Search similar content",
+        "Plan my day",
+        "Find related ideas"
+      ]
+    },
+    "role_management": {
+      "enabled": true,
+      "custom_roles_folder": "AI Roles",
+      "export_import": true
+    }
+  },
+  "performance": {
+    "lazy_loading": true,
+    "batch_processing": true,
+    "cache_embeddings": true,
+    "max_concurrent_requests": 3
+  }
+}

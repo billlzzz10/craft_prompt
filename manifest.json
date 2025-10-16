@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-ai-mcp",
+  "name": "AI MCP Plugin",
+  "version": "0.4.0",
+  "minAppVersion": "1.0.0",
+  "description": "Advanced AI plugin with Memory Graph, RAG, Dashboard, Enhanced Search, Email Notifications, and Multi-Provider AI Integration.",
+  "author": "AI MCP Team",
+  "authorUrl": "https://github.com/ai-mcp-team/obsidian-ai-mcp",
+  "isDesktopOnly": false,
+  "dependencies": []
+}
