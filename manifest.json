@@ -4,8 +4,8 @@
   "version": "0.4.0",
   "minAppVersion": "1.0.0",
   "description": "Advanced AI plugin with Memory Graph, RAG, Dashboard, Enhanced Search, Email Notifications, and Multi-Provider AI Integration.",
-  "author": "AI MCP Team",
-  "authorUrl": "https://github.com/ai-mcp-team/obsidian-ai-mcp",
+  "author": "billlzzz",
+  "authorUrl": "https://github.com/billlzzz10/craft_prompt",
   "isDesktopOnly": false,
   "dependencies": []
 }

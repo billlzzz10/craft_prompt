@@ -1,7 +1,9 @@
 {
   "project_name": "Obsidian AI MCP Plugin",
   "description": "Enhanced with Mistral RAG, Qdrant hybrid, Role+Planning, Chat Interface, Graph View integration.",
-  "version": "0.3.0",
+  "version": "0.4.0",
+  "author": "billlzzz",
+  "contact": "billlzzz8@zoho.com",
   "ai_behavior": {
     "default_provider": "mistral",
     "preferred_models": {

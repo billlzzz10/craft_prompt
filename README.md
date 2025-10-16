@@ -1,3 +1,4 @@
+
 # Obsidian AI MCP Plugin v0.4.0
 
 ## 🚀 ฟีเจอร์ใหม่ในเวอร์ชัน 0.4.0
@@ -259,6 +260,10 @@ window.aiMcpPlugin.performanceOptimizer.getPerformanceMetrics()
 window.aiMcpPlugin.enhancedSearch.getSearchAnalytics()
 window.aiMcpPlugin.vercelAI.testAllProviders()
 ```
+
+## 🔐 Security
+
+หากคุณพบช่องโหว่ด้านความปลอดภัย กรุณาติดต่อเราที่ `billlzzz8@zoho.com`
 
 ## 🤝 การพัฒนาต่อ
 
